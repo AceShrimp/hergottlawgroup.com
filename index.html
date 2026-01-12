@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hergott Law Group | Daniel Hergott</title>
-  <meta name="description" content="Hergott Law Group, led by attorney Daniel Hergott. Focused on whistleblower (qui tam) and complex litigation matters." />
+  <meta name="description" content="Chicago’s Hergott Law Group. Whistleblower (qui tam) representation under federal and state whistleblower laws." />
   <meta name="robots" content="index,follow" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Hergott Law Group | Daniel Hergott" />
-  <meta property="og:description" content="Whistleblower (qui tam) and complex litigation representation." />
+  <meta property="og:description" content="Whistleblower (qui tam) representation under federal and state whistleblower laws." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.hergottlawgroup.com/" />
 
@@ -18,7 +18,6 @@
   <style>
     :root{
       --bg:#0b0f14;
-      --card:#111827;
       --text:#e5e7eb;
       --muted:#9ca3af;
       --brand:#eab308;
@@ -38,13 +37,16 @@
     }
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+
     .topbar{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0;
+      gap:14px;
     }
     .brand{
       display:flex; gap:10px; align-items:center; text-decoration:none;
-      font-weight:700; letter-spacing:.2px;
+      font-weight:800; letter-spacing:.2px;
+      white-space:nowrap;
     }
     .dot{width:12px; height:12px; border-radius:99px; background:var(--brand); box-shadow:0 0 0 6px rgba(234,179,8,.12)}
     nav a{
@@ -55,18 +57,21 @@
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 14px; border-radius:999px;
-      background:var(--brand); color:#111; text-decoration:none; font-weight:800;
+      background:var(--brand); color:#111; text-decoration:none; font-weight:900;
       border:1px solid rgba(234,179,8,.55);
+      white-space:nowrap;
     }
     .btn.secondary{
       background:transparent; color:var(--text);
       border:1px solid var(--line);
     }
+
     .hero{
       display:grid; grid-template-columns: 1.15fr .85fr;
       gap:22px; align-items:stretch;
       margin-top:18px;
     }
+
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       border:1px solid var(--line);
@@ -74,33 +79,20 @@
       padding:22px;
       box-shadow: 0 12px 40px rgba(0,0,0,.28);
     }
-    h1{font-size:42px; line-height:1.1; margin:0 0 12px}
-    .sub{color:var(--muted); font-size:16px; margin:0 0 18px}
-    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px}
-    .kpi{padding:12px; border-radius:14px; border:1px solid var(--line); background: rgba(0,0,0,.18)}
-    .kpi b{display:block; font-size:14px}
-    .kpi span{color:var(--muted); font-size:13px}
-    .portrait{
-      display:flex; flex-direction:column; gap:14px;
+
+    h1{font-size:42px; line-height:1.1; margin:0 0 10px}
+    .sub{color:var(--muted); font-size:16px; margin:0 0 16px}
+
+    /* Responsive logo */
+    .hero-logo{
+      display:block;
+      max-width: min(320px, 100%);
+      width: 100%;
+      height: auto;
+      margin: 0 0 14px;
+      object-fit: contain;
     }
-    .photo{
-      width:100%; aspect-ratio: 4/5;
-      border-radius:16px; overflow:hidden;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.2);
-    }
-    .photo img{width:100%; height:100%; object-fit:cover; display:block}
-    .section{margin-top:22px}
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    .item h3{margin:0 0 6px; font-size:16px}
-    .item p{margin:0; color:var(--muted); font-size:14px}
-    .footer{
-      margin-top:26px;
-      border-top:1px solid var(--line);
-      padding:18px 0 26px;
-      color:var(--muted); font-size:13px;
-    }
-    .fineprint{margin-top:10px; color:var(--muted); font-size:12px}
+
     .contactbar{
       display:flex; flex-wrap:wrap; gap:10px; margin-top:14px
     }
@@ -113,16 +105,44 @@
       background: rgba(0,0,0,.18);
     }
     .pill:hover{color:var(--text)}
+
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px}
+    .kpi{padding:12px; border-radius:14px; border:1px solid var(--line); background: rgba(0,0,0,.18)}
+    .kpi b{display:block; font-size:14px}
+    .kpi span{color:var(--muted); font-size:13px}
+
+    .section{margin-top:22px}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .item h3{margin:0 0 6px; font-size:16px}
+    .item p{margin:0; color:var(--muted); font-size:14px}
+
+    .portrait{display:flex; flex-direction:column; gap:14px;}
+    .photo{
+      width:100%; aspect-ratio: 4/5;
+      border-radius:16px; overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.2);
+    }
+    .photo img{width:100%; height:100%; object-fit:cover; display:block}
+
+    .footer{
+      margin-top:26px;
+      border-top:1px solid var(--line);
+      padding:18px 0 26px;
+      color:var(--muted); font-size:13px;
+    }
+    .fineprint{margin-top:10px; color:var(--muted); font-size:12px}
+
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr}
-      h1{font-size:36px}
-      .grid3{grid-template-columns:1fr}
+      h1{font-size:34px}
       nav{display:none}
       .kpis{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
     }
   </style>
 
-  <!-- Basic LegalService schema (edit as needed) -->
+  <!-- Basic LegalService schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -130,11 +150,8 @@
     "name": "Hergott Law Group",
     "url": "https://www.hergottlawgroup.com/",
     "telephone": "+1-312-975-2701",
-    "email": "Dan@HergottLawGroup.com",
-    "founder": {
-      "@type": "Person",
-      "name": "Daniel Hergott"
-    },
+    "email": "dan@hergottlawgroup.com",
+    "founder": { "@type": "Person", "name": "Daniel Hergott" },
     "areaServed": "Illinois",
     "address": {
       "@type": "PostalAddress",
@@ -158,80 +175,83 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn" href="#contact">Request a consult</a>
+      <a class="btn" href="tel:+13129752701">(312) 975-2701</a>
     </header>
 
     <main>
       <section class="hero" aria-label="Hero">
         <div class="card">
-         
-<section class="hero" role="banner" aria-label="Site hero">
-  <div class="container">
-    <!-- Logo ABOVE the heading -->
-    <img src="assets/HLG Logo 1.png" alt="Your Company whistleblower …</h1>
+          <!-- Logo above heading -->
+          <img class="hero-logo" src="assets/HLG%20Logo%201.png" alt="Hergott Law Group logo" />
 
-          <h1>Focused counsel for whistleblower and complex litigation matters.</h1>
-          <p class="sub">
-            Hergott Law Group is led by attorney <b>Daniel Hergott</b>. We represent clients with high-stakes disputes and
-            provide clear, practical guidance from first call to resolution.
+          <h1>Chicago’s Hergott Law Group</h1>
+          <p class="sub">Whistleblower Work</p>
+
+          <p style="margin:0; color:var(--muted);">
+            The Hergott Law Group represents <strong>qui tam whistleblowers</strong> under federal and state whistleblower laws,
+            including matters involving:
           </p>
 
-          <div class="contactbar">
-            <a class="pill" href="tel:+13129752701">Call: (312) 975-2701</a>
-            <a class="pill" href="mailto:dan@hergottlawgroup.com">Email: Dan@HergottLawGroup.com</a>
-            <a class="pill" href="#contact">Contact form ↓</a>
-          </div>
-
-          <div class="kpis" role="list" aria-label="Highlights">
+          <div class="kpis" role="list" aria-label="Whistleblower programs">
             <div class="kpi" role="listitem">
-              <b>Whistleblower (Qui Tam)</b>
-              <span>False Claims Act and fraud-related matters</span>
+              <b>False Claims Acts</b>
+              <span>Frauds against the government</span>
             </div>
             <div class="kpi" role="listitem">
-              <b>Litigation Strategy</b>
-              <span>Practical risk assessment and disciplined execution</span>
+              <b>SEC &amp; CFTC Programs</b>
+              <span>Securities and commodity futures fraud</span>
             </div>
             <div class="kpi" role="listitem">
-              <b>Client Communication</b>
-              <span>Clear updates and responsive counsel</span>
+              <b>IRS Program</b>
+              <span>Tax fraud</span>
             </div>
           </div>
 
           <div class="section" id="practice">
-            <h2 style="margin:0 0 10px; font-size:18px;">Practice areas</h2>
+            <h2 style="margin:0 0 10px; font-size:18px;">How we work</h2>
             <div class="grid3">
               <div class="card item">
-                <h3>Whistleblower / Qui Tam</h3>
-                <p>Representation for relators and counsel on the False Claims Act process, risks, and next steps.</p>
+                <h3>Focused docket</h3>
+                <p>We devote full attention to a small number of qui tam matters at a time.</p>
               </div>
               <div class="card item">
-                <h3>Complex Civil Litigation</h3>
-                <p>High-stakes disputes requiring tight case management and strong written advocacy.</p>
+                <h3>Early assessment</h3>
+                <p>We can quickly assess potential FCA matters and advise on the right course of action.</p>
               </div>
               <div class="card item">
-                <h3>Investigations & Pre-Suit</h3>
-                <p>Early assessment, document strategy, and positioning before litigation escalates.</p>
+                <h3>Experienced counsel</h3>
+                <p>We work alongside government investigators and prosecutors in whistleblower matters.</p>
               </div>
             </div>
           </div>
+
+          <div class="contactbar" style="margin-top:16px">
+            <a class="pill" href="tel:+13129752701">Call: (312) 975-2701</a>
+            <a class="pill" href="mailto:dan@hergottlawgroup.com">Email: dan@hergottlawgroup.com</a>
+            <a class="pill" href="#contact">Contact form ↓</a>
+          </div>
         </div>
 
-        <aside class="card portrait" aria-label="Attorney profile">
+        <aside class="card portrait" aria-label="Attorney profile" id="about">
           <div class="photo">
-            <img src="assets/D Hergott Headshot close up.jpg" alt="Daniel Hergott" />
+            <img src="assets/D%20Hergott%20Headshot%20close%20up.jpg" alt="Daniel Hergott" />
           </div>
-          <div id="about">
+
+          <div>
             <h2 style="margin:0 0 8px; font-size:18px;">Daniel Hergott</h2>
             <p style="margin:0; color:var(--muted); font-size:14px;">
-              Daniel R. Hergott has been representing qui tam whistleblowers under the False Claims Act since 2011, when he graduated magna cum laude from Chicago-Kent College of Law. During law school, Mr. Hergott worked as an extern for The Honorable Ann Claire Williams of the U.S. Court of Appeals for the Seventh Circuit and as a clerk at the U.S. Attorney’s Office for the Northern District of Illinois and the Eastern District of Wisconsin.
-
-He has particular expertise in healthcare fraud and defense contractor fraud. 
+              Daniel R. Hergott has represented qui tam whistleblowers under the False Claims Act since 2011.
+              He graduated <em>magna cum laude</em> from Chicago-Kent College of Law and served as an extern for
+              The Honorable Ann Claire Williams of the U.S. Court of Appeals for the Seventh Circuit, and as a clerk
+              at the U.S. Attorney’s Office for the Northern District of Illinois and the Eastern District of Wisconsin.
             </p>
             <p style="margin:12px 0 0; color:var(--muted); font-size:14px;">
               <b>Admissions:</b> Illinois; U.S. District Court (N.D. Illinois)
             </p>
           </div>
+
           <a class="btn secondary" href="#contact">Get in touch</a>
+
           <div class="fineprint">
             This website is attorney advertising. Prior results do not guarantee a similar outcome.
           </div>
@@ -244,7 +264,12 @@ He has particular expertise in healthcare fraud and defense contractor fraud.
           Send a message and we’ll respond promptly. Do not include confidential information until an attorney-client relationship is confirmed.
         </p>
 
-        <!-- Simple no-backend form: uses mailto. Replace with Formspree / Basin / custom backend later. -->
+        <p style="margin:0 0 14px; color:var(--muted); font-size:14px;">
+          Phone: <a href="tel:+13129752701">(312) 975-2701</a><br>
+          Email: <a href="mailto:dan@hergottlawgroup.com">dan@hergottlawgroup.com</a>
+        </p>
+
+        <!-- Simple no-backend form (mailto). Consider switching to a form provider later for reliability. -->
         <form action="mailto:dan@hergottlawgroup.com" method="post" enctype="text/plain">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
             <label style="display:flex; flex-direction:column; gap:6px">
@@ -265,6 +290,10 @@ He has particular expertise in healthcare fraud and defense contractor fraud.
             <a class="btn secondary" href="tel:+13129752701">Or call now</a>
           </div>
         </form>
+
+        <div class="fineprint" style="margin-top:12px;">
+          Do not send confidential information until an attorney-client relationship is confirmed.
+        </div>
       </section>
 
       <footer class="footer">
