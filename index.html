@@ -21,10 +21,10 @@
       --text:#e5e7eb;
       --muted:#9ca3af;
 
-      --brand:#0C3C2B;     /* logo green */
-      --cream:#F5EFDE;     /* logo cream */
-      --banner:#E8E5DB;    /* header logo strip */
-      --accent:#D6C89A;    /* hover accent */
+      --brand:#0C3C2B;       /* logo green */
+      --cream:#F5EFDE;       /* logo cream */
+      --banner:#E8E5DB;      /* corrected banner strip */
+      --accent:#D6C89A;      /* hover accent */
 
       --line:#1f2937;
       --max:1100px;
@@ -44,46 +44,19 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:24px}
 
-    /* Header */
-    .topbar{
+    /* Header layout */
+    .header{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .toprow{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
-      padding:10px 0;
-    }
-
-    .logo-banner{
-      background: var(--banner);
-      border-radius: 14px;
-      padding: 8px 12px;
-      display:flex;
-      align-items:center;
-      border: 1px solid rgba(245,239,222,.08);
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      text-decoration:none;
       gap:12px;
-      font-weight:900;
-      letter-spacing:.2px;
-      white-space:nowrap;
-      color:#111;
     }
-
-    .brand img{
-      height: 46px;     /* main “dynamic” constraint */
-      width: auto;
-      display:block;
-    }
-
-    nav a{
-      text-decoration:none; color:var(--muted);
-      margin-left:16px; font-weight:700;
-    }
-    nav a:hover{ color:var(--accent); }
 
     /* Buttons */
     .btn{
@@ -110,7 +83,26 @@
       color: var(--accent);
     }
 
-    /* Layout */
+    /* Full-width logo banner */
+    .logo-banner{
+      width:100%;
+      background:var(--banner);
+      border-radius:16px;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(0,0,0,.08);
+    }
+    .logo-banner img{
+      display:block;
+      height:74px;      /* adjust to taste */
+      width:auto;
+      max-width:100%;
+      object-fit:contain;
+    }
+
+    /* Page layout */
     .hero{
       display:grid; grid-template-columns: 1.15fr .85fr;
       gap:22px; align-items:stretch;
@@ -165,10 +157,9 @@
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr}
       h1{font-size:34px}
-      nav{display:none}
       .kpis{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
-      .brand img{ height: 42px; }
+      .logo-banner img{ height:64px; }
     }
   </style>
 
@@ -194,22 +185,19 @@
 
 <body>
   <div class="wrap">
-    <header class="topbar">
-      <!-- Logo in a banner strip -->
-      <div class="logo-banner">
-        <a class="brand" href="/">
-          <!-- Tip: rename file to assets/hlg-logo.png to avoid %20 encoding -->
-          <img src="assets/HLG%20Logo%202.png" alt="Hergott Law Group logo" />
-        </a>
+
+    <header class="header">
+      <!-- Row 1 -->
+      <div class="toprow">
+        <a class="btn" href="/">Hergott Law Group</a>
+        <a class="btn" href="tel:+13129752701">Call (312) 975-2701</a>
       </div>
 
-      <nav aria-label="Primary">
-        <a href="#practice">Practice</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a class="btn" href="tel:+13129752701">Call (312) 975-2701</a>
+      <!-- Row 2: full-width logo banner -->
+      <div class="logo-banner" aria-label="Hergott Law Group logo banner">
+        <!-- Tip: rename file to assets/hlg-logo.png to avoid %20 encoding -->
+        <img src="assets/HLG%20Logo%201.png" alt="Hergott Law Group logo" />
+      </div>
     </header>
 
     <main>
@@ -263,59 +251,4 @@
           </div>
 
           <div>
-            <h2 style="margin:0 0 8px; font-size:18px;">Daniel Hergott</h2>
-            <p style="margin:0; color:var(--muted); font-size:14px;">
-              Daniel R. Hergott has represented qui tam whistleblowers under the False Claims Act since 2011.
-              He graduated <em>magna cum laude</em> from Chicago-Kent College of Law and served as an extern for
-              The Honorable Ann Claire Williams of the U.S. Court of Appeals for the Seventh Circuit, and as a clerk
-              at the U.S. Attorney’s Office for the Northern District of Illinois and the Eastern District of Wisconsin.
-            </p>
-            <p style="margin:12px 0 0; color:var(--muted); font-size:14px;">
-              <b>Admissions:</b> Illinois; U.S. District Court (N.D. Illinois)
-            </p>
-          </div>
-
-          <a class="btn secondary" href="#contact">Get in touch</a>
-
-          <div class="fineprint">
-            This website is attorney advertising. Prior results do not guarantee a similar outcome.
-          </div>
-        </aside>
-      </section>
-
-      <section class="card section" id="contact" aria-label="Contact">
-        <h2 style="margin:0 0 8px; font-size:18px;">Contact</h2>
-        <p style="margin:0 0 14px; color:var(--muted); font-size:14px;">
-          Send a message including your name and contact information and we’ll respond promptly.
-          Do not include confidential information until an attorney-client relationship is confirmed.
-        </p>
-
-        <div class="contact-actions">
-          <a class="btn" href="tel:+13129752701">Call (312) 975-2701</a>
-          <a class="btn secondary" href="mailto:dan@hergottlawgroup.com">Email dan@hergottlawgroup.com</a>
-        </div>
-
-        <div class="fineprint" style="margin-top:12px;">
-          Do not send confidential information until an attorney-client relationship is confirmed.
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div>© <span id="year"></span> Hergott Law Group. All rights reserved.</div>
-        <div class="fineprint">
-          This site is for informational purposes and does not constitute legal advice.
-        </div>
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+            <h2 style="margin:0 0
