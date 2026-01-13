@@ -20,11 +20,18 @@
       --bg:#0b0f14;
       --text:#e5e7eb;
       --muted:#9ca3af;
-      --brand:#eab308;
+      --brand:#0C3C2B;
+      --accent:#D6C89A;
       --line:#1f2937;
       --max:1100px;
       --radius:18px;
     }
+.logo-wrap{
+  background:#F5EFDE;
+  padding:12px 16px;
+  border-radius:12px;
+  display:inline-block;
+}
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -53,7 +60,10 @@
       text-decoration:none; color:var(--muted);
       margin-left:16px; font-weight:600;
     }
-    nav a:hover{color:var(--text)}
+    nav a:hover{
+  color:var(--accent);
+}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 14px; border-radius:999px;
@@ -84,17 +94,18 @@
     .sub{color:var(--muted); font-size:16px; margin:0 0 16px}
 
     /* Responsive logo */
-    .hero-logo{
+ .hero-logo{
   display:block;
   width:100%;
-  max-width: 420px;      /* cap on large screens */
-  max-height: 72px;      /* prevents it from getting tall */
+  max-width: 520px;     /* feels right for this layout */
   height:auto;
-  margin: 0 0 14px;
-  object-fit: contain;
+  margin: 0 0 18px;
 }
+
 @media (max-width: 900px){
-  .hero-logo{ max-width: 320px; max-height: 64px; }
+  .hero-logo{
+    max-width: 360px;
+  }
 }
 
     .contactbar{
@@ -108,7 +119,15 @@
       color:var(--muted);
       background: rgba(0,0,0,.18);
     }
-    .pill:hover{color:var(--text)}
+    .pill:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+    .btn.secondary:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
 
     .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px}
     .kpi{padding:12px; border-radius:14px; border:1px solid var(--line); background: rgba(0,0,0,.18)}
@@ -186,7 +205,9 @@
       <section class="hero" aria-label="Hero">
         <div class="card">
           <!-- Logo above heading -->
-          <img class="hero-logo" src="assets/HLG%20Logo%201.png" alt="Hergott Law Group logo" />
+          <div class="logo-wrap">
+  <img class="hero-logo" src="assets/HLG%20Logo%201.png" alt="Hergott Law Group logo" />
+</div>
 
           <h1>Chicago’s Hergott Law Group</h1>
           <p class="sub">Whistleblower Work</p>
