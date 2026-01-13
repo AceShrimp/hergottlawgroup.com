@@ -90,21 +90,19 @@
     /* Full-width logo banner */
     .logo-banner{
       width:100%;
-      background:var(--panel);
-      border-radius:16px;
-      padding:18px 16px;
+      padding: 10px 0 6px;   /* no box, just spacing */
       display:flex;
       align-items:center;
-      justify-content:center;
-      border:1px solid rgba(255,249,239,.10);
-    }
+      justify-content:center; /* keep centered */
+}
     .logo-banner img{
       display:block;
-      height: 96px;   /* adjust larger/smaller here */
+      height: 96px;          /* adjust here */
       width:auto;
       max-width:100%;
       object-fit:contain;
-    }
+}
+
 
     /* Main layout */
     .hero{
@@ -126,15 +124,54 @@
     h1{font-size:40px; line-height:1.1; margin:0 0 10px}
     .sub{color:var(--muted); font-size:16px; margin:0 0 16px}
 
-    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px}
-    .kpi{padding:12px; border-radius:14px; border:1px solid var(--cardLine); background: rgba(0,0,0,.18)}
-    .kpi b{display:block; font-size:14px}
-    .kpi span{color:var(--muted2); font-size:13px}
+    .kpis{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-top:16px;
+}
+
+    .kpi{
+    padding:0;                 /* no box */
+    border:0;                  /* no border */
+    background:transparent;     /* no background */
+}
+
+    .kpi b{
+    display:block;
+    font-size:14px;
+    letter-spacing:.2px;
+}
+
+    .kpi span{
+    color:var(--muted2);
+    font-size:13px;
+}
 
     .section{margin-top:22px}
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    .item h3{margin:0 0 6px; font-size:16px}
-    .item p{margin:0; color:var(--muted2); font-size:14px}
+    .grid3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+    .item{
+    padding:0;
+    border:0;
+    background:transparent;
+}
+
+    .item h3{
+    margin:0 0 6px;
+    font-size:16px;
+}
+
+    .item p{
+    margin:0;
+    color:var(--muted2);
+    font-size:14px;
+}
+
 
     .portrait{display:flex; flex-direction:column; gap:14px;}
     .photo{
