@@ -20,25 +20,23 @@
       --bg:#0b0f14;
       --text:#e5e7eb;
       --muted:#9ca3af;
+
       --brand:#0C3C2B;     /* logo green */
-      --accent:#D6C89A;    /* warm accent */
       --cream:#F5EFDE;     /* logo cream */
+      --banner:#E8E5DB;    /* header logo strip */
+      --accent:#D6C89A;    /* hover accent */
+
       --line:#1f2937;
       --max:1100px;
       --radius:18px;
     }
-.logo-wrap{
-  background:#F5EFDE;
-  padding:12px 16px;
-  border-radius:12px;
-  display:inline-block;
-}
+
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(234,179,8,.18), transparent 55%),
-                  radial-gradient(900px 500px at 90% 0%, rgba(59,130,246,.14), transparent 60%),
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(214,200,154,.14), transparent 55%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(12,60,43,.18), transparent 60%),
                   var(--bg);
       color:var(--text);
       line-height:1.5;
@@ -46,25 +44,48 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:24px}
 
+    /* Header */
     .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       gap:14px;
+      padding:10px 0;
     }
+
+    .logo-banner{
+      background: var(--banner);
+      border-radius: 14px;
+      padding: 8px 12px;
+      display:flex;
+      align-items:center;
+      border: 1px solid rgba(245,239,222,.08);
+    }
+
     .brand{
-      display:flex; gap:10px; align-items:center; text-decoration:none;
-      font-weight:800; letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
       white-space:nowrap;
+      color:#111;
     }
-    .dot{width:12px; height:12px; border-radius:99px; background:var(--brand); box-shadow:0 0 0 6px rgba(234,179,8,.12)}
+
+    .brand img{
+      height: 46px;     /* main “dynamic” constraint */
+      width: auto;
+      display:block;
+    }
+
     nav a{
       text-decoration:none; color:var(--muted);
-      margin-left:16px; font-weight:600;
+      margin-left:16px; font-weight:700;
     }
-    nav a:hover{
-  color:var(--accent);
-}
+    nav a:hover{ color:var(--accent); }
 
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 14px; border-radius:999px;
@@ -74,24 +95,22 @@
       font-weight:900;
       border:1px solid rgba(245,239,222,.55);
       white-space:nowrap;
-}
-
+    }
     .btn:hover{
       border-color: var(--accent);
       box-shadow: 0 0 0 6px rgba(214,200,154,.12);
-}
-
+    }
     .btn.secondary{
       background:transparent;
       color:var(--cream);
       border:1px solid rgba(245,239,222,.25);
-}
-
+    }
     .btn.secondary:hover{
       border-color: var(--accent);
       color: var(--accent);
-}
+    }
 
+    /* Layout */
     .hero{
       display:grid; grid-template-columns: 1.15fr .85fr;
       gap:22px; align-items:stretch;
@@ -106,46 +125,8 @@
       box-shadow: 0 12px 40px rgba(0,0,0,.28);
     }
 
-    h1{font-size:42px; line-height:1.1; margin:0 0 10px}
+    h1{font-size:40px; line-height:1.1; margin:0 0 10px}
     .sub{color:var(--muted); font-size:16px; margin:0 0 16px}
-
-    /* Responsive logo */
- .hero-logo{
-  display:block;
-  width:100%;
-  max-width: 520px;     /* feels right for this layout */
-  height:auto;
-  margin: 0 0 18px;
-}
-
-@media (max-width: 900px){
-  .hero-logo{
-    max-width: 360px;
-  }
-}
-
-    .contactbar{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:14px
-    }
-    .pill{
-  border:1px solid rgba(245,239,222,.22);
-  border-radius:999px;
-  padding:9px 12px;
-  text-decoration:none;
-  color:var(--muted);
-  background: rgba(0,0,0,.18);
-}
-
-.pill:hover{
-  color:var(--cream);
-  border-color: var(--accent);
-}
-
-    .btn.secondary:hover{
-  border-color:var(--accent);
-  color:var(--accent);
-}
-
 
     .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px}
     .kpi{padding:12px; border-radius:14px; border:1px solid var(--line); background: rgba(0,0,0,.18)}
@@ -174,16 +155,23 @@
     }
     .fineprint{margin-top:10px; color:var(--muted); font-size:12px}
 
+    .contact-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr}
       h1{font-size:34px}
       nav{display:none}
       .kpis{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
+      .brand img{ height: 42px; }
     }
   </style>
 
-  <!-- Basic LegalService schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -207,26 +195,26 @@
 <body>
   <div class="wrap">
     <header class="topbar">
-      <a class="brand" href="/">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Hergott Law Group</span>
-      </a>
+      <!-- Logo in a banner strip -->
+      <div class="logo-banner">
+        <a class="brand" href="/">
+          <!-- Tip: rename file to assets/hlg-logo.png to avoid %20 encoding -->
+          <img src="assets/HLG%20Logo%202.png" alt="Hergott Law Group logo" />
+        </a>
+      </div>
+
       <nav aria-label="Primary">
         <a href="#practice">Practice</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
+
       <a class="btn" href="tel:+13129752701">Call (312) 975-2701</a>
     </header>
 
     <main>
       <section class="hero" aria-label="Hero">
         <div class="card">
-          <!-- Logo above heading -->
-          <div class="logo-wrap">
-  <img class="hero-logo" src="assets/HLG%20Logo%201.png" alt="Hergott Law Group logo" />
-</div>
-
           <h1>Chicago’s Hergott Law Group</h1>
           <p class="sub">Whistleblower Work</p>
 
@@ -259,19 +247,13 @@
               </div>
               <div class="card item">
                 <h3>Early assessment</h3>
-                <p>We can quickly assess potential FCA matters and advise on the right course of action.</p>
+                <p>We can quickly assess potential matters and advise on the right course of action.</p>
               </div>
               <div class="card item">
                 <h3>Experienced counsel</h3>
                 <p>We work alongside government investigators and prosecutors in whistleblower matters.</p>
               </div>
             </div>
-          </div>
-
-          <div class="contactbar" style="margin-top:16px">
-            <a class="pill" href="tel:+13129752701">Call: (312) 975-2701</a>
-            <a class="pill" href="mailto:dan@hergottlawgroup.com">Email: dan@hergottlawgroup.com</a>
-            <a class="pill" href="#contact">Contact form ↓</a>
           </div>
         </div>
 
@@ -304,35 +286,14 @@
       <section class="card section" id="contact" aria-label="Contact">
         <h2 style="margin:0 0 8px; font-size:18px;">Contact</h2>
         <p style="margin:0 0 14px; color:var(--muted); font-size:14px;">
-          Send a message and we’ll respond promptly. Do not include confidential information until an attorney-client relationship is confirmed.
+          Send a message including your name and contact information and we’ll respond promptly.
+          Do not include confidential information until an attorney-client relationship is confirmed.
         </p>
 
-        <p style="margin:0 0 14px; color:var(--muted); font-size:14px;">
-          Phone: <a href="tel:+13129752701">(312) 975-2701</a><br>
-          Email: <a href="mailto:dan@hergottlawgroup.com">dan@hergottlawgroup.com</a>
-        </p>
-
-        <!-- Simple no-backend form (mailto). Consider switching to a form provider later for reliability. -->
-        <form action="mailto:dan@hergottlawgroup.com" method="post" enctype="text/plain">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
-            <label style="display:flex; flex-direction:column; gap:6px">
-              <span style="color:var(--muted); font-size:13px">Name</span>
-              <input name="name" required style="padding:12px; border-radius:12px; border:1px solid var(--line); background:#0b1220; color:var(--text)" />
-            </label>
-            <label style="display:flex; flex-direction:column; gap:6px">
-              <span style="color:var(--muted); font-size:13px">Email</span>
-              <input name="email" type="email" required style="padding:12px; border-radius:12px; border:1px solid var(--line); background:#0b1220; color:var(--text)" />
-            </label>
-          </div>
-          <label style="display:flex; flex-direction:column; gap:6px; margin-top:12px">
-            <span style="color:var(--muted); font-size:13px">Message</span>
-            <textarea name="message" rows="6" required style="padding:12px; border-radius:12px; border:1px solid var(--line); background:#0b1220; color:var(--text)"></textarea>
-          </label>
-          <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
-            <button class="btn" type="submit">Send</button>
-            <a class="btn secondary" href="tel:+13129752701">Or call now</a>
-          </div>
-        </form>
+        <div class="contact-actions">
+          <a class="btn" href="tel:+13129752701">Call (312) 975-2701</a>
+          <a class="btn secondary" href="mailto:dan@hergottlawgroup.com">Email dan@hergottlawgroup.com</a>
+        </div>
 
         <div class="fineprint" style="margin-top:12px;">
           Do not send confidential information until an attorney-client relationship is confirmed.
@@ -349,6 +310,11 @@
   </div>
 
   <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
